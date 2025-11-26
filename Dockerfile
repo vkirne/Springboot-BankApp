@@ -25,7 +25,7 @@ RUN mvn clean install -DskipTests=true
 #--------------------------------------
 
 # Import small size java image
-FROM openjdk:17-alpine as deployer
+FROM openjdk:26-ea-slim as deployer
 
 # Copy build from stage 1 (builder)
 COPY --from=builder /src/target/*.jar /src/target/bankapp.jar
